@@ -1,6 +1,6 @@
 # HumanaOpen [![Product Introduction](https://img.shields.io/badge/Product%20Introduction-Visit-blue?style=for-the-badge)](https://caizonglin.github.io/)
 
-<img src="docs/HumanaOpen.png" alt="HumanaOpen" width="100%">
+<img src="docs/HumanaOpen_EN.png" alt="HumanaOpen" width="100%">
 
 [English](README.md) | [中文](README_zh.md) | [Français](README_fr.md) | [한국어](README_ko.md)
 
