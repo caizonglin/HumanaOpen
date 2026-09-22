@@ -1,4 +1,4 @@
-# HumanaOpen [![Product Introduction](https://img.shields.io/badge/Product%20Introduction-Visit-blue)](https://caizonglin.github.io/)
+# HumanaOpen [![Product Introduction](https://img.shields.io/badge/Product%20Introduction-Visit-blue?style=for-the-badge)](https://caizonglin.github.io/)
 
 <img src="docs/HumanaOpen.png" alt="HumanaOpen" width="100%">
 
