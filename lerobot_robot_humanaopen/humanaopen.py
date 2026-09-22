@@ -695,17 +695,21 @@ class HumanaOpen(Robot):
             for name, raw in list(raw_map.items()):
                 if skip_gripper and name.endswith("gripper"):
                     continue
-                prev = state.get(name)
-                if prev is None:
-                    state[name] = raw
+                entry = state.get(name)
+                if entry is None:
+                    # First frame: seed with (wrapped_raw, offset=0); pass raw.
+                    state[name] = (raw, 0)
                     continue
-                delta = raw - prev
+                prev_raw, offset = entry
+                delta = raw - prev_raw
+                # Judge against the WRAPPED prev (delta stays small), accumulate
+                # the offset separately so a multi-turn joint stays monotonic.
                 if delta > 2048:
-                    raw -= 4096
+                    offset -= 4096
                 elif delta < -2048:
-                    raw += 4096
-                state[name] = raw
-                raw_map[name] = raw
+                    offset += 4096
+                state[name] = (raw, offset)
+                raw_map[name] = raw + offset
 
         _unwrap(left_pos, True)
         _unwrap(head_pos, False)
